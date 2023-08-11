@@ -32,10 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'bootstrap'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
    gem 'rspec-rails'
@@ -57,9 +57,11 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "haml-rails", "~> 1.0.0"
+gem 'simple_form'
