@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'language_list', '~> 1.2', '>= 1.2.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'pundit'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
