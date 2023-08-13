@@ -10,6 +10,5 @@
   %body
     .container
       = render "shared/nav"
-      %p.notice= notice
-      %p.alert= alert
+      = render "shared/messages"
       = yield

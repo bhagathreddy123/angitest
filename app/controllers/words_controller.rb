@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_word, except: [:index, :new, :create]
 
   def index
