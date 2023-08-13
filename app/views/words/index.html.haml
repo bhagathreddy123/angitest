@@ -6,7 +6,9 @@
       %th
         Content
       %th
-        Language 
+        Language
+      %th
+        User
       %th
         Actions
   %tbody
@@ -18,6 +20,8 @@
           = word.content
         %td
           = word.language&.name
+        %td
+          = word.user&.email
         %td
           =  link_to "Edit", edit_word_path(word), class: "btn btn-warning"
           =  link_to "Show", word_path(word), class: "btn btn-info"

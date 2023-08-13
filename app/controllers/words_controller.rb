@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_word, except: [:index, :new, :create]
 
   def index
@@ -13,6 +13,7 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
+    @word.user_id = current_user.id
     if @word.save
       redirect_to words_path
     else
@@ -25,6 +26,7 @@ class WordsController < ApplicationController
 
   def update
     if @word.update(word_params)
+      @word.user_id = current_user.id
       redirect_to words_path
     else
       render :edit 
