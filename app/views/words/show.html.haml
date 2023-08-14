@@ -1,6 +1,11 @@
 %h1 Word
 %p
-  = @word.id
-  = @word.language
   = @word.content
+%p 
+  = @word.language.name
+- if @word.translations.any?
+  %h3 Translations
+  %p= @word.translations.pluck(:content).join(',')
+
+
 = link_to "Back", words_path

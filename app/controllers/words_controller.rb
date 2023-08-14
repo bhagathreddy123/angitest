@@ -8,12 +8,15 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new
+    @word = current_user.words.new
   end
 
   def create
     @word = Word.new(word_params)
-    @word.user_id = current_user.id
+    @word.user = current_user
+    @word.translations.each do |translation|
+      translation.user = current_user
+    end
     if @word.save
       redirect_to words_path
     else

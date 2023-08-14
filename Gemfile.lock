@@ -164,6 +164,7 @@ GEM
     mini_portile2 (2.8.4)
     minitest (5.19.0)
     msgpack (1.7.2)
+    nested_form (0.3.2)
     net-imap (0.3.7)
       date
       net-protocol
@@ -336,6 +337,7 @@ DEPENDENCIES
   kaminari
   language_list (~> 1.2, >= 1.2.1)
   listen (>= 3.0.5, < 3.2)
+  nested_form
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   pundit
