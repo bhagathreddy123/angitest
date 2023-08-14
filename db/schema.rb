@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_14_054850) do
+ActiveRecord::Schema.define(version: 2023_08_14_180739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "good_answers_count"
+    t.integer "bad_answers_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "languages", force: :cascade do |t|
     t.string "name"
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 2023_08_14_054850) do
     t.index ["user_id"], name: "index_words_on_user_id"
   end
 
+  add_foreign_key "games", "users"
   add_foreign_key "translations", "words"
   add_foreign_key "translations", "words", column: "translated_word_id"
   add_foreign_key "words", "languages"
