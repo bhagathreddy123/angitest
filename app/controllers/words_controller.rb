@@ -39,6 +39,7 @@ class WordsController < ApplicationController
   end
 
   def show
+    @random_word = Words::RandomWord.new.call
   end
 
   def destroy
