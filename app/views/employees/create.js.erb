@@ -1,5 +1,5 @@
 <% if @employee.errors.any? %>
-alert("Invalid Details");
+  $("#errorArea").html("<%= escape_javascript render('error', employee: @employee) %>");
 <% else %>
 $("#employeesTable").prepend("<%= escape_javascript render('employee_row', employee: @employee)%>");
 $(".close-modal").click();

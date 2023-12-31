@@ -11,7 +11,7 @@
 <th></th>
 </tr>
 </thead>
-<tbody>
+<tbody id="employeesTable">
 <% @employees.each do |employee| %>
 <tr>
 <%= render "employee_row", employee: employee %>
