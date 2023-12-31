@@ -1,0 +1,64 @@
+<h1> Listing employees </h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Contact</th>
+<th>Address</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<% @employees.each do |employee| %>
+<tr>
+<%= render "employee_row", employee: employee %>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
+<%= link_to 'New Employee', new_employee_path, data: { bs_target: "#newEmployeeModal", bs_toggle: "modal", remote: true } %>
+
+<div class="modal fade" id="newEmployeeModal" tabindex="-1" aria-labelledby="newEmployeeModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newEmployeeModal">New Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="newEmployeeForm">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editEmployeeModalLabel">Edit Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="EditEmployeeForm">
+      </div>
+    </div>
+  </div>
+</div> 
+
+<div class="modal fade" id="showEmployeeModal" tabindex="-1" aria-labelledby="showEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="showEmployeeModalLabel">Show Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="ShowEmployee">
+      </div>
+    </div>
+  </div>
+</div> 

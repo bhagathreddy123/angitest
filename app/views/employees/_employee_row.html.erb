@@ -1,0 +1,10 @@
+  <tr id="employeeRow_<%= employee.id %>">
+    <td><%= employee.name %></td>
+    <td><%= employee.email %></td>
+    <td><%= employee.contact %></td>
+    <td><%= employee.address %></td>
+    <td><%= link_to 'Show', employee, data: { bs_target: "#showEmployeeModal", bs_toggle: "modal", remote: true } %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee), data: { bs_target: "#editEmployeeModal", bs_toggle: "modal", remote: true } %> </td>
+    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'dropdown-item' %></td>
+  </tr>
+

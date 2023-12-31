@@ -1,0 +1,6 @@
+<% if @employee.errors.any? %>
+alert("Invalid Details");
+<% else %>
+$("#employeeRow_<%= employee.id %>").replacewith("<%= escape_javascript render('employee_row', employee: @employee)%>");
+$(".close-modal").click();
+<% end %>

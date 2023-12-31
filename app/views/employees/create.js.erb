@@ -1,0 +1,6 @@
+<% if @employee.errors.any? %>
+alert("Invalid Details");
+<% else %>
+$("#employeesTable").prepend("<%= escape_javascript render('employee_row', employee: @employee)%>");
+$(".close-modal").click();
+<% end %>
